@@ -24,7 +24,6 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Built Using](#built_using)
 
 ## 🧐 About <a name = "about"></a>
