@@ -11,7 +11,7 @@
     "http"
   ],
   "paths": {
-    "/register": {
+    "/api/user/register": {
       "post": {
         "summary": "Register a new user",
         "description": "Allows a new user to register for the blog app",
@@ -75,7 +75,7 @@
         }
       }
     },
-    "/login": {
+    "/api/user/login": {
       "post": {
         "summary": "Log in a user",
         "description": "Allows a registered user to log in to the blog app",
@@ -136,7 +136,7 @@
         }
       }
     },
-    "/posts": {
+    "/api/post/": {
       "post": {
         "summary": "Create a new post",
         "description": "Allows an authenticated user to create a new post",
@@ -233,7 +233,7 @@
         }
       }
     },
-    "/posts/{id}": {
+    "/api/post/{id}": {
       "get": {
         "summary": "Get a post by id",
         "description": "Retrieves a specific blog post by its id",

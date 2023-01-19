@@ -54,7 +54,7 @@ exports.updatePost = async (req, res) => {
         let post = await Post.findById(req.params.id);
         if (!post) return res.status(404).json({ msg: 'Post not found' });
         // Make sure user owns post
-        if (post.author.toString() !== req.user) {
+        if (post.author.toString() !== req.user._id) {
             return res.status(401).json({ msg: 'Not authorized' });
         }
         post = await Post.findByIdAndUpdate(
@@ -71,10 +71,12 @@ exports.updatePost = async (req, res) => {
 
 exports.deletePost = async (req, res) => {
     try {
+
         let post = await Post.findById(req.params.id);
         if (!post) return res.status(404).json({ msg: 'Post not found' });
+
         // Make sure user owns post
-        if (post.author.toString() !== req.user) {
+        if (post.author.toString() !== req.user._id) {
             return res.status(401).json({ msg: 'Not authorized' });
         }
         await Post.findByIdAndRemove(req.params.id);

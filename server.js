@@ -9,8 +9,6 @@ connectDB();
 // use bodyparser middleware
 app.use(express.json());
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
 const userRoutes = require('./routes/users.route.js');
 const postRoutes = require('./routes/posts.route.js');
 app.use('/api/user', userRoutes);
